@@ -16,28 +16,28 @@ and rectangle patch cannot separate them.
 save specified portion as an image file, from spectrogram and its annotation label file (yolo format).  
 
 Input spectrogram sample:  
-![figure1](doc/spectrogram_with_label.png)  
+![figure1](docs/spectrogram_with_label.png)  
 Output specified portion image:  
-![figure2](doc/input1_2_0__0_0.jpg)  
+![figure2](docs/input1_2_0__0_0.jpg)  
 
 
 ### make_mask.py 
 make mask data (npy file) from handwritten mask define image (BMP file)  
 
 Handwritten mask define image sample:  
-![figure3](doc/input1_2_0__0_0_MASK_1.bmp)  
+![figure3](docs/input1_2_0__0_0_MASK_1.bmp)  
 
 Output mask image:  
-![figure4](doc/input1_2_0__0_0_MASK_1_temp.bmp)  
+![figure4](docs/input1_2_0__0_0_MASK_1_temp.bmp)  
 
 
 ### template_matching.py  
 detect parts by template matching with mask method. 
 
 Result sample: green is the template, blue ones are detected.  
-![figure5](doc/input1_2_0__0_0_MASK_1_temp_template_matching_with_mask.png)  
-![figure6](doc/input1_2_2__0_0_MASK_1_temp_template_matching_with_mask.png)  
-![figure7](doc/input1_2_3__0_1_MASK_1_temp_template_matching_with_mask.png)  
+![figure5](docs/input1_2_0__0_0_MASK_1_temp_template_matching_with_mask.png)  
+![figure6](docs/input1_2_2__0_0_MASK_1_temp_template_matching_with_mask.png)  
+![figure7](docs/input1_2_3__0_1_MASK_1_temp_template_matching_with_mask.png)  
 
 
 ## License  
