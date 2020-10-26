@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> harmonic structure parts detect   </title>
+<meta name="description" content="harmonic structure parts detection by template matching with mask" />
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-lg px-3 my-5 markdown-body">
+<h1> harmonic structure parts detect   </h1>
+<p>  <br />
+This is an experiment of voice/instrument-sound harmonic structure parts detection by template matching with mask method.<br />
+ <br />
+<a href="https://github.com/shun60s/harmonic-structure-parts-detect/">github repository</a><br /></p>
+
+
+<h2>description  </h2>
+
+<p>This aims to detect each parts of harmonic structure, from spectrogram specified in voice/instrument-sound portion.<br />
+Template matching with mask method is used, because rectangle patch is inappropriate due to voice parts are bent and closed each other,
+and rectangle patch cannot separate them. <br /></p>
+
+
+<h3> prepare.py  </h3>
+<p>save specified portion as an image file, from spectrogram and its annotation label file (yolo format).<br /></p>
+
+<p>Input spectrogram sample:<br />
+<img src="spectrogram_with_label.png" alt="figure1" ><br />
+Output specified portion image:<br />
+<img src="input1_2_0__0_0.jpg" alt="figure2" ><br /></p>
+
+
+<h3>make_mask.py </h3>
+<p>make mask data (npy file) from handwritten mask define image (BMP file)<br /></p>
+
+<p>Handwritten mask define image sample:<br />
+<img src="input1_2_0__0_0_MASK_1.bmp" alt="figure3" ><br /></p>
+
+<p>Output mask image:<br />
+<img src="input1_2_0__0_0_MASK_1_temp.bmp" alt="figure4" ><br /></p>
+
+
+<h3>template_matching.py  </h3>
+<p>detect parts by template matching with mask method. </p>
+
+<p>Result sample: green is the template, blue ones are detected.<br />
+<img src="input1_2_0__0_0_MASK_1_temp_template_matching_with_mask.png" alt="figure5" ><br />
+<img src="input1_2_2__0_0_MASK_1_temp_template_matching_with_mask.png" alt="figure6" ><br />
+<img src="input1_2_3__0_1_MASK_1_temp_template_matching_with_mask.png" alt="figure7" ><br /></p>
+
+
+<h2>License  </h2>
+
+<p>MIT except peak_det.py<br /></p>
+<p>Regarding to peak_det.py, please refer the notice in the content.<br /></p>
+
+
+</div>
+</body>
+</html>
