@@ -186,14 +186,14 @@ def get_pos_in_accept_range(score, pos, peaks_index, filter_size, accept_x_range
 #----------------------------------------------------------------------------------
 # CV2 のtemplate_matching のmaskを使ったものを追加。
 
-import cv2  # version > 3.0.0
-#  opencv-python (3.4.6)
+import cv2  # version > 4.4
+#  opencv-python (4.4.0.44)
 
 def template_matching_mask_cv2(base_img, temp_img, unmask, ZeroMean=False):
     # template matching with mask
     #  a) Normalized Cross-Correlation 正規化相互相関数　1～0    TM_CCORR_NORMED　計算時間は早い。
     #  b) Zero-mean Normalized Cross-Correlation 平均値を引いた後に正規化相互相関数（相関係数） TM_CCOEFF_NORMED
-    #    　こちらはcv2でmaskを指定するとエラーが出る。 error: (-213)  in function cv::matchTemplateMask
+    #     When opencv-python version was 3.4.6,  error: (-213)  in function cv::matchTemplateMask
     base= np.array(base_img,dtype=np.float32) / 255.
     temp= np.array(temp_img,dtype=np.float32) / 255.
     y1y2= np.array( unmask, dtype=np.int)
@@ -246,8 +246,8 @@ class Class_Show3(object):
         print (self.unmask.shape)
         
         # template matching with mask
-        self.score, self.pos= template_matching_mask(self.base_img, self.temp_img, self.unmask, ZeroMean=True)
-        ###self.score, self.pos= template_matching_mask_cv2(self.base_img, self.temp_img, self.unmask, ZeroMean=False)
+        ##self.score, self.pos= template_matching_mask(self.base_img, self.temp_img, self.unmask, ZeroMean=True)
+        self.score, self.pos= template_matching_mask_cv2(self.base_img, self.temp_img, self.unmask, ZeroMean=True): #False)
         # get local maximum postions
         self.filter_size= filter_size
         self.peaks_index= detect_peaks(self.score, filter_size=self.filter_size, order=0.6) # adjust order 0.5? 0.6? 0.7? as effective peak theshold ratio to maximum peak
