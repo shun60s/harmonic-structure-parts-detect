@@ -47,3 +47,9 @@ MIT  except peak_det.py
 Regarding to peak_det.py, please refer the notice in the content.  
 
 
+## related links  
+
+- [spectrogram portion detection by YOLO](https://github.com/shun60s/YOLO-spectrogram-darknet-clone/)  
+
+
+
